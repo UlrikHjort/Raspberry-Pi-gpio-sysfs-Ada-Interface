@@ -21,18 +21,18 @@ with Gpio_RaspberryPi;
 procedure Main is   
    package Gpio renames Gpio_RaspberryPi;     
    
-   PIN1 : constant Integer := 23;
-   PIN2 : constant Integer := 18; 
+   PIN23 : constant Integer := 23;
+   PIN18 : constant Integer := 18; 
    
    Pin_Out : Integer := 0;
      
 begin
-   Gpio.Export(PIN1);
-   Gpio.Export(PIN2);
-   Gpio.Set_Pin_Mode(PIN1,Gpio.Mode_Out);   
-   Gpio.Set_Pin_Mode(PIN2,Gpio.Mode_In);
+   Gpio.Export(PIN23);
+   Gpio.Export(PIN18);
+   Gpio.Set_Pin_Mode(PIN23,Gpio.Mode_Out);   
+   Gpio.Set_Pin_Mode(PIN18,Gpio.Mode_In);
    
-   Gpio.Digital_Write(PIN1,GPio.Low);   
-   Pin_Out := Gpio.Digital_Read(PIN2);
+   Gpio.Digital_Write(PIN23,GPio.Low);   
+   Pin_Out := Gpio.Digital_Read(PIN18);
 end Main;
 
